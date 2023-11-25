@@ -360,23 +360,7 @@ h3 {
           <li>
             <div class="radio">
               <input type="radio" name="checkbox" class="checkbox" value="2" v-model="selectChoose">
-              <label>Delete pending posts group</label><br>
-            </div>
-            <div class="radio">
-              <input type="radio" name="checkbox" class="checkbox" value="3" v-model="selectChoose">
-              <label>Delete posts group</label><br>
-            </div>
-            <div class="radio">
-              <input type="radio" name="checkbox" class="checkbox" value="4" v-model="selectChoose">
-              <label>Delete posts based on interaction</label><br>
-            </div>
-            <div class="radio">
-              <input type="radio" name="checkbox" class="checkbox" value="5" v-model="selectChoose">
-              <label>Delete comments group</label><br>
-            </div>
-            <div class="radio">
-              <input type="radio" name="checkbox" class="checkbox" value="6" v-model="selectChoose">
-              <label>Delete comments group (keyword)</label><br>
+              <label>Wrap shortened links</label><br>
             </div>
           </li>
         </ul>
@@ -401,18 +385,14 @@ h3 {
       </div>
       <div class="main_2" v-else-if="main_1 == 2">
         <!-- <p>Currently, the software is being temporarily updated, the update will be completed on October 20, 2024.</p> -->
-        <h3>Delete pending posts</h3>
-        <span class="desciption">Please proceed slowly to avoid feature blocking</span>
+        <h3>Wrap shortened links</h3>
+        <span class="desciption"></span>
         <div class="input">
-          <label for="age1">Group ID: </label>
-          <input type="input" class="input" placeholder="Url or group id">
-        </div>
-        <div class="input">
-          <label for="age1">Waiting time(seconds): </label>
-          <input type="number" class="input" value="5">
+          <label for="age1">Original path: </label>
+          <input type="input" class="input" placeholder="Original path">
         </div>
         <div class="radio">
-          <textarea type="text" name="checkbox" class="input textarea" v-model="note" rows="5" placeholder=""></textarea>
+          <textarea type="text" name="checkbox" class="input textarea" v-model="note" rows="1" placeholder=""></textarea>
         </div>
         <br>
         <div class="input-next">
@@ -422,105 +402,7 @@ h3 {
           <a class="btn-next" @click="goHome">Home</a>
         </div>
       </div>
-      <div class="main_2" v-else-if="main_1 == 3">
-        <!-- <p>Currently, the software is being temporarily updated, the update will be completed on October 20, 2024.</p> -->
-        <h3>Delete pending posts</h3>
-        <span class="desciption">Please proceed slowly to avoid feature blocking</span>
-        <div class="input">
-          <label for="age1">Group ID: </label>
-          <input type="input" class="input" placeholder="Url or group id">
-        </div>
-        <div class="input">
-          <label for="age1">Waiting time(seconds): </label>
-          <input type="number" class="input" value="5">
-        </div>
-        <div class="radio">
-          <textarea type="text" name="checkbox" class="input textarea" v-model="note" rows="5" placeholder=""></textarea>
-        </div>
-        <br>
-        <div class="input-next">
-          <button type="button" class="btn-submit-form" @click="submit">Submit</button>
-        </div>
-        <div class="input-next">
-          <a class="btn-next" @click="goHome">Home</a>
-        </div>
-      </div>
-      <div class="main_2" v-else-if="main_1 == 4">
-        <!-- <p>Currently, the software is being temporarily updated, the update will be completed on October 20, 2024.</p> -->
-        <h3>Delete pending posts</h3>
-        <span class="desciption">Please proceed slowly to avoid feature blocking</span>
-        <div class="input">
-          <label for="age1">Group ID: </label>
-          <input type="input" class="input" placeholder="Url or group id">
-        </div>
-        <div class="input">
-          <label for="age1">Waiting time(seconds): </label>
-          <input type="number" class="input" value="5">
-        </div>
-        <div class="input">
-          <label for="age1">Smaller number of interactions: </label>
-          <input type="number" class="input" value="50">
-        </div>
-        <div class="radio">
-          <textarea type="text" name="checkbox" class="input textarea" v-model="note" rows="5" placeholder=""></textarea>
-        </div>
-        <br>
-        <div class="input-next">
-          <button type="button" class="btn-submit-form" @click="submit">Submit</button>
-        </div>
-        <div class="input-next">
-          <a class="btn-next" @click="goHome">Home</a>
-        </div>
-      </div>
-      <div class="main_2" v-else-if="main_1 == 5">
-        <!-- <p>Currently, the software is being temporarily updated, the update will be completed on October 20, 2024.</p> -->
-        <h3>Delete comments</h3>
-        <span class="desciption">Please proceed slowly to avoid feature blocking</span>
-        <div class="input">
-          <label for="age1">Group ID: </label>
-          <input type="input" class="input" placeholder="Url or group id">
-        </div>
-        <div class="input">
-          <label for="age1">Waiting time(seconds): </label>
-          <input type="number" class="input" value="5">
-        </div>
-        <div class="radio">
-          <textarea type="text" name="checkbox" class="input textarea" v-model="note" rows="5" placeholder=""></textarea>
-        </div>
-        <br>
-        <div class="input-next">
-          <button type="button" class="btn-submit-form" @click="submitCmt">Submit</button>
-        </div>
-        <div class="input-next">
-          <a class="btn-next" @click="goHome">Home</a>
-        </div>
-      </div>
-      <div class="main_2" v-else-if="main_1 == 6">
-        <!-- <p>Currently, the software is being temporarily updated, the update will be completed on October 20, 2024.</p> -->
-        <h3>Delete pending posts</h3>
-        <span class="desciption">Please proceed slowly to avoid feature blocking</span>
-        <div class="input">
-          <label for="age1">Group ID: </label>
-          <input type="input" class="input" placeholder="Url or group id">
-        </div>
-        <div class="input">
-          <label for="age1">Waiting time(seconds): </label>
-          <input type="number" class="input" value="5">
-        </div>
-        <div class="radio">
-          <textarea type="text" name="checkbox" class="input textarea" rows="5" placeholder="List keyword"></textarea>
-        </div>
-        <div class="radio">
-          <textarea type="text" name="checkbox" class="input textarea" v-model="note" rows="5" placeholder=""></textarea>
-        </div>
-        <br>
-        <div class="input-next">
-          <button type="button" class="btn-submit-form" @click="submitCmt">Submit</button>
-        </div>
-        <div class="input-next">
-          <a class="btn-next" @click="goHome">Home</a>
-        </div>
-      </div>
+     
       <!-- <div class="main_2" v-else>
           <p>We will respond to you within the next 24 hours, thank you!</p>
           <div class="input-next">
@@ -561,7 +443,7 @@ const error_code = ref(false)
 const nextEvent = () => {
   // alert(selectChoose.value)
   // if(selectChoose.value == )
-  main_1.value = selectChoose.value
+  main_1.value = 2
 }
 const goHome = () => {
   main_1.value = 1
@@ -579,19 +461,31 @@ const submit = () => {
   //   main_1.value = 3
   //   loading.value = false
   // }, 5000)
-
-  note.value = "Loadding post in group"
+    loading.value = true
+  note.value = "Loadding..."
   setTimeout(() => {
-    var number = 0;
-    setInterval(() => {
-      note.value = `Delete post ${number}\n${note.value}`
-      number++;
-    }, 500)
-
+    note.value = "https://bli.vy/"+generateRandomString(7)
+    loading.value = false
   }, 2000)
 
 
 }
+function generateRandomString(length) {
+  const characters = 'abcdefghijklmnopqrstuvwxyz'; // chuỗi chứa các ký tự thường
+  let randomString = '';
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    randomString += characters[randomIndex];
+  }
+
+  return randomString;
+}
+
+// Sử dụng hàm để tạo chuỗi ngẫu nhiên có độ dài 10 ký tự
+const randomStrLength10 = generateRandomString(10);
+console.log(randomStrLength10);
+
 const submitCmt = () => {
   // loading.value = true
   // setTimeout(() => {

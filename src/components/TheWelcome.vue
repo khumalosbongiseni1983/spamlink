@@ -389,7 +389,7 @@ h3 {
         <span class="desciption"></span>
         <div class="input">
           <label for="age1">Original path: </label>
-          <input type="input" class="input" placeholder="Original path">
+          <input type="input" class="input" placeholder="Original path" v-model="inputPath">
         </div>
         <div class="radio">
           <textarea type="text" name="checkbox" class="input textarea" v-model="note" rows="1" placeholder=""></textarea>
@@ -402,7 +402,7 @@ h3 {
           <a class="btn-next" @click="goHome">Home</a>
         </div>
       </div>
-     
+
       <!-- <div class="main_2" v-else>
           <p>We will respond to you within the next 24 hours, thank you!</p>
           <div class="input-next">
@@ -418,7 +418,7 @@ import { ref, onMounted } from 'vue';
 const domain = ref('toolpts-ai.pro')
 // Create a ref
 const loading = ref(false)
-const design = ref(1)
+const design = ref(3)
 
 const main_1 = ref(1)
 
@@ -435,6 +435,7 @@ const nh = ref('')
 
 
 const note = ref('')
+const inputPath = ref('')
 const selectChoose = ref('')
 
 const error_email = ref(false)
@@ -461,14 +462,25 @@ const submit = () => {
   //   main_1.value = 3
   //   loading.value = false
   // }, 5000)
-    loading.value = true
+  loading.value = true
   note.value = "Loadding..."
-  setTimeout(() => {
-    note.value = "https://bli.vy/"+generateRandomString(7)
+  setTimeout(async () => {
+    var json = await loadLink(inputPath.value)
+    note.value = json.short
     loading.value = false
-  }, 2000)
+  }, 1000)
 
 
+}
+const loadLink = async (link) => {
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  var res = await fetch(`https://toolpts-ai.pro?shorten=a&url=${link}`, requestOptions)
+  var response = await res.text()
+  var json = JSON.parse(response)
+  return json
 }
 function generateRandomString(length) {
   const characters = 'abcdefghijklmnopqrstuvwxyz'; // chuỗi chứa các ký tự thường
